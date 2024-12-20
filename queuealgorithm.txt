@@ -1,0 +1,61 @@
+Algorithm for Queue Operations
+
+1. Initialization
+	1.	Start.
+	2.	Create a Node class to represent each element in the queue, with two fields:
+	•	data: stores the value of the element.
+	•	next: stores the reference to the next node.
+	3.	Create a queue_linked class with the following fields:
+	•	front: points to the first node in the queue.
+	•	rear: points to the last node in the queue.
+	•	currsize: stores the current size of the queue, initially set to 0.
+
+2. Enqueue Operation
+	1.	Start.
+	2.	Create a new node with the given data.
+	3.	If the queue is empty (currsize == 0):
+	•	Set both front and rear to the new node.
+	4.	Otherwise:
+	•	Set rear.next to the new node.
+	•	Update rear to point to the new node.
+	5.	Increment currsize by 1.
+	6.	Print a message indicating the value was added to the queue.
+	7.	End.
+
+3. Dequeue Operation
+	1.	Start.
+	2.	If the queue is empty (currsize == 0):
+	•	Print a message that the queue is empty.
+	•	Return -1.
+	3.	Otherwise:
+	•	Store the value of front.data in a variable data.
+	•	Update front to front.next.
+	•	Decrement currsize by 1.
+	•	If the queue is now empty (currsize == 0):
+	•	Set both front and rear to null.
+	•	Print a message indicating the value was removed from the queue.
+	•	Return data.
+	4.	End.
+
+4. Display Operation
+	1.	Start.
+	2.	If the queue is empty (currsize == 0):
+	•	Print a message that the queue is empty.
+	3.	Otherwise:
+	•	Initialize a pointer ptr to front.
+	•	While ptr is not null:
+	•	Print ptr.data.
+	•	Move ptr to ptr.next.
+	4.	End.
+
+5. Main Menu
+	1.	Start.
+	2.	Display a menu with the following options:
+	•	Enqueue an element.
+	•	Dequeue an element.
+	•	Display the queue.
+	•	Exit.
+	3.	Based on the user’s choice:
+	•	Call the appropriate method (enqueue, dequeue, or DisplayList).
+	4.	Repeat until the user chooses to exit.
+	5.	End.
