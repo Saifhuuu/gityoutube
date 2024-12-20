@@ -1,0 +1,29 @@
+Algorithm for Infix to Postfix Conversion
+	1.	Start
+	•	Read the infix expression from the user.
+	2.	Initialize
+	•	Create an empty stack to hold operators (stack).
+	•	Create an empty result string (result).
+	3.	Iterate through each character in the infix expression
+	•	For each character c in the expression:
+	1.	If c is an operand (letter or digit):
+	•	Append c to result.
+	2.	If c is an opening parenthesis '(':
+	•	Push it onto the stack.
+	3.	If c is a closing parenthesis ')':
+	•	While the top of the stack is not '(', pop from the stack and append to result.
+	•	Pop the '(' from the stack.
+	•	If the stack is empty and no '(' is found, report an “Invalid Expression”.
+	4.	If c is an operator (+, -, *, /, ^):
+	•	While the stack is not empty and the precedence of c is less than or equal to the precedence of the operator at the top of the stack:
+	•	Pop from the stack and append to result.
+	•	Push c onto the stack.
+	4.	Pop remaining operators from the stack
+	•	While the stack is not empty:
+	•	If the top of the stack is '(', report an “Invalid Expression” (unmatched parenthesis).
+	•	Otherwise, pop from the stack and append to result.
+	5.	Return the result string
+	•	The result string now contains the postfix expression.
+	6.	Display the postfix expression
+	•	Print the result.
+	7.	End
